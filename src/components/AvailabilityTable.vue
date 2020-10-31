@@ -6,7 +6,7 @@
       <input type=range v-model="jobLength" @change="updateGridState" min=1 max=5 />
     </div>
     <div class="calendar__wrapper">
-      <h3>Step2: Select and arrival time</h3>
+      <h3>Step 2: Select and arrival time</h3>
       <div class="calendar">
         <div class="calendar__day calendar__day--times">
           <div class="calendar__day-header"></div>
@@ -126,10 +126,12 @@ export default {
   @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap');
   .html {
     font-size: 16px;
+    font-family: 'Roboto', sans-serif;
   }
 
   * {
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
   }
 
   .wrapper {
@@ -164,7 +166,6 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    font-family: 'Roboto', sans-serif;
   }
   .calendar__day:first-child {
     border-left: 2px solid #dedede;
