@@ -1,5 +1,7 @@
 # availability-calendar
 
+This is a demo project for technical assessment.
+
 ## Project setup
 ```
 npm install
