@@ -6,27 +6,28 @@
       <input type=range v-model="jobLength" @change="updateGridState" min=1 max=5 />
     </div>
     <div class="calendar__wrapper">
-    <div class="calendar">
-      <div class="calendar__day calendar__day--times">
-        <div class="calendar__day-header"></div>
-        <div class="calendar__day-cell">09:00 - 10:00</div>
-        <div class="calendar__day-cell">10:00 - 11:00</div>
-        <div class="calendar__day-cell">11:00 - 12:00</div>
-        <div class="calendar__day-cell">12:00 - 13:00</div>
-        <div class="calendar__day-cell">13:00 - 14:00</div>
-        <div class="calendar__day-cell">14:00 - 15:00</div>
-        <div class="calendar__day-cell">15:00 - 16:00</div>
-        <div class="calendar__day-cell">16:00 - 17:00</div>
-        <div class="calendar__day-cell">17:00 - 18:00</div>
-      </div>
-      <div class="calendar__day" v-for="day in gridItems" :key="day.Date">
-        <div class="calendar__day-header">{{day.date}}</div>
-        <div class="calendar__day-cell" :class="isSelected(day.date, slot.time) ? 'Selected' : slot.status" v-for="slot in day.slots" :key="`day-${slot.time}`" @click="selectSlot(slot, day.date)">
-          {{isSelected(day.date, slot.time) ? "Selected" : slot.status}}
+      <h3>Step2: Select and arrival time</h3>
+      <div class="calendar">
+        <div class="calendar__day calendar__day--times">
+          <div class="calendar__day-header"></div>
+          <div class="calendar__day-cell">09:00 - 10:00</div>
+          <div class="calendar__day-cell">10:00 - 11:00</div>
+          <div class="calendar__day-cell">11:00 - 12:00</div>
+          <div class="calendar__day-cell">12:00 - 13:00</div>
+          <div class="calendar__day-cell">13:00 - 14:00</div>
+          <div class="calendar__day-cell">14:00 - 15:00</div>
+          <div class="calendar__day-cell">15:00 - 16:00</div>
+          <div class="calendar__day-cell">16:00 - 17:00</div>
+          <div class="calendar__day-cell">17:00 - 18:00</div>
+        </div>
+        <div class="calendar__day" v-for="day in gridItems" :key="day.Date">
+          <div class="calendar__day-header">{{day.date}}</div>
+          <div class="calendar__day-cell" :class="isSelected(day.date, slot.time) ? 'Selected' : slot.status" v-for="slot in day.slots" :key="`day-${slot.time}`" @click="selectSlot(slot, day.date)">
+            {{isSelected(day.date, slot.time) ? "Selected" : slot.status}}
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -154,6 +155,9 @@ export default {
   .calendar__wrapper {
     overflow-x: auto;
     width: 100%;
+  }
+  .calendar__wrapper h3 {
+    text-align: left;
   }
 
   .calendar {
